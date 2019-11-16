@@ -4,10 +4,6 @@
 	<div class="con-box">
 		<nav-sidebar></nav-sidebar>
 		<div class="content" border="0">
-			<!-- 学生列表内容 -->
-			<!-- <stu-list></stu-list> -->
-			<!-- 新增学生的表格 -->
-			<!-- <add-stu></add-stu> -->
 			<router-view></router-view>
 		</div>
 	</div>
@@ -18,7 +14,6 @@
 	import pageNav from '@/components/pageNav'
 	import navSidebar from '@/components/navSidebar'
 	
-
 	export default {
 		components: {
 			pageNav,
