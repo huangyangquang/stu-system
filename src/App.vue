@@ -1,136 +1,33 @@
 <template>
   <div id="app" class="wrapper">
-	<div class="nav">
-		<span class="title">拥抱变化，初心至善</span>
-	</div>
+	<page-nav></page-nav>
 	<div class="con-box">
-		<!-- 侧边栏 -->
-		<ul class="sidebar-nav">
-			<h4>学生管理</h4>
-			<!-- data-id用于切换页面展示 -->
-			<li class="active" data-id="stu-List-box">学生列表</li>
-			<li data-id="add-stu-box">新增学生</li>
-		</ul>
+		<nav-sidebar></nav-sidebar>
 		<div class="content" border="0">
 			<!-- 学生列表内容 -->
-			<div class="stu-List-box">
-				<!-- 搜索插件 -->
-				<div class="search-box">
-					
-					<input type="text" class="search" placeholder="按邮箱 / 学号 查询">
-					<button class="btn">搜索</button>
-					
-				</div>
-				<table class="stuTable" border="0">
-					<thead>
-						<tr>
-							<th>学号</th>
-							<th>姓名</th>
-							<th>性别</th>
-							<th>年龄</th>
-							<th>邮箱</th>
-							<th>地区</th>
-							<th>手机号</th>
-							<th>操作</th>
-						</tr>
-					</thead>
-					<tbody>
-						
-					</tbody>
-				</table>
-				<div class="turnPage">
-					
-				</div>
-				<!-- 弹出遮罩层，显示修改的学生信息表单 -->
-				<div class="mask-box">
-					<div class="mask">
-						<form class="changeForm">
-							<div>
-								<label for="name">姓名</label>
-								<input type="text" id="name" name="name" />
-							</div>
-							<div class="sex">
-								<span>性别</span>
-								<div>
-									<input type="radio" id="man" name="sex" value="0">
-									<label for="man">男</label>
-								</div>
-								<div>
-									<input type="radio" id="woman" name="sex" value="1">
-									<label for="woman">女</label>
-								</div>
-								
-							</div>
-							<div>
-								<label for="sNo">学号</label>
-								<input type="text" id="sNo" name="sNo">
-							</div>
-							<div>
-								<label for="email">邮箱</label>
-								<input type="text" id="email" name="email">
-							</div>
-							<div>
-								<label for="birth">出生年</label>
-								<input type="text" id="birth" name="birth">
-							</div>
-							<div>
-								<label for="phone">手机号</label>
-								<input type="text" id="phone" name="phone">
-							</div>
-							<div>
-								<label for="address">地址</label>
-								<input type="text" id="address" name="address">
-							</div>
-							<div class="btn">
-								<input type="submit" value="修改" class="changeStu">
-								<input type="reset" value="重置" class="resetStu">
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
+			<stu-list></stu-list>
 			<!-- 新增学生的表格 -->
-			<form class="newStu-form add-stu-box">
-				<span>
-					<label for="name">姓名</label>
-					<input type="text" id="name" name="name" />
-				</span>
-				<span>
-					<span>性别</span>
-					<input type="radio" id="man" name="sex" value="0" checked>
-					<label for="man">男</label>
-					<input type="radio" id="woman" name="sex" value="1">
-					<label for="woman">女</label>
-				</span>
-				<span>
-					<label for="sNo">学号</label>
-					<input type="text" id="sNo" name="sNo">
-				</span>
-				<span>
-					<label for="email">邮箱</label>
-					<input type="text" id="email" name="email">
-				</span>
-				<span>
-					<label for="birth">出生年</label>
-					<input type="text" id="birth" name="birth">
-				</span>
-				<span>
-					<label for="phone">手机号</label>
-					<input type="text" id="phone" name="phone">
-				</span>
-				<span>
-					<label for="address">地址</label>
-					<input type="text" id="address" name="address">
-				</span>
-				<span>
-					<input type="submit" value="添加" class="addStu">
-					<input type="reset" value="重置" class="resetStu">
-				</span>
-			</form>
+			<add-stu></add-stu>
 		</div>
 	</div>
   </div>
 </template>
+
+<script>
+	import pageNav from '@/components/pageNav'
+	import navSidebar from '@/components/navSidebar'
+	import stuList from '@/components/stuList'
+	import addStu from '@/components/addStu'
+
+	export default {
+		components: {
+			pageNav,
+			navSidebar,
+			stuList,
+			addStu
+		}
+	};
+</script>
 
 <style lang="css">
 * {
@@ -168,8 +65,16 @@ html, body, .wrapper {
 	width: 50px;
 	height: 50px;
 	background-repeat: no-repeat;
+
+
+
 	/*为什么不可以解析url里图片？*/
 	/*background-image: url('./assets/logo.png');*/
+
+
+
+
+	
 	background-size: 100% 100%;
 }
 
