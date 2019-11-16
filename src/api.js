@@ -6,11 +6,11 @@ const appkey = '13169614911_1553445443290'
 
 
 const myAjax = Axios.create({
-	method: 'get',
-	baseURL: urls.baseURL,
 	params: {
 	    appkey
 	},
+	method: 'get',
+	baseURL: urls.baseURL,
 })
 
 export default{
