@@ -5,9 +5,10 @@
 		<nav-sidebar></nav-sidebar>
 		<div class="content" border="0">
 			<!-- 学生列表内容 -->
-			<stu-list></stu-list>
+			<!-- <stu-list></stu-list> -->
 			<!-- 新增学生的表格 -->
-			<add-stu></add-stu>
+			<!-- <add-stu></add-stu> -->
+			<router-view></router-view>
 		</div>
 	</div>
   </div>
@@ -16,15 +17,12 @@
 <script>
 	import pageNav from '@/components/pageNav'
 	import navSidebar from '@/components/navSidebar'
-	import stuList from '@/components/stuList'
-	import addStu from '@/components/addStu'
+	
 
 	export default {
 		components: {
 			pageNav,
-			navSidebar,
-			stuList,
-			addStu
+			navSidebar
 		}
 	};
 </script>
@@ -295,7 +293,7 @@ html, body, .wrapper {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	display: none;
+	/*display: none;*/
 }
 
 .wrapper .con-box .content .newStu-form>span {
