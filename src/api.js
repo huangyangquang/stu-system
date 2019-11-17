@@ -7,16 +7,20 @@ const appkey = '13169614911_1553445443290'
 
 const myAjax = Axios.create({
 	params: {
-	    appkey
+		// temp: '我怎么没有出现呀？'
+		appkey
 	},
 	method: 'get',
 	baseURL: urls.baseURL,
 })
 
 export default{
+
 	findByPage (page = 1) {
 		return myAjax.get(urls.findByPage, {
 			params: {
+				// 暂时这样写
+				// appkey,
 				size,
 				page
 			}
