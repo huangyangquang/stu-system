@@ -13,19 +13,20 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>175566</td>
-				<td>huangyangquan</td>
-				<td>男</td>
-				<td>18</td>
-				<td>5728@qq.com</td>
-				<td>北极</td>
-				<td>1356946</td>
+			<tr v-for="(stu, index) in stuList" :key="index">
+				<td>{{stu.sNo}}</td>
+				<td>{{stu.name}}</td>
+				<td>{{stu.sex == 0 ? '男' : '女'}}</td>
+				<td>{{new Date().getFullYear() - stu.birth}}</td>
+				<td>{{stu.email}}</td>
+				<td>{{stu.address}}</td>
+				<td>{{stu.phone}}</td>
 				<td>
 					<button class="delStu">
 						删除
 					</button>
-					<button class="changeStuInfo">
+					<button class="changeStuInfo"
+									@click="changeStuInfo(stu, index)">
 						修改
 					</button>
 				</td>
@@ -35,11 +36,34 @@
 </template>
 
 <script>
+	import {mapState, mapActions, mapMutations} from 'vuex'
 	export default {
-		
+		data() {
+			return {
 
-
-
-
+			}
+		},
+		mounted() {
+			this.setStuList_findByPage();
+		},
+		computed: {
+			...mapState(['stuList'])
+		},
+		methods: {
+			...mapActions(['setStuList_findByPage']),
+			...mapMutations(['setStu']),
+			changeStuInfo(stu, index) {
+				// 通过eventBus来实现兄弟组件间的通信 遮罩层的显示与隐藏
+				this.bus.$emit('click');
+				// 传递payload
+				this.setStu({ stu, index })
+			}
+		}
 	};
 </script>
+
+<style scoped>
+	button {
+		margin: 0px 2px;
+	}
+</style>

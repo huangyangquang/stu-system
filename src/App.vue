@@ -207,7 +207,7 @@ html, body, .wrapper {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, .6);
-	display: none;
+	/*display: none*/;
 }
 
 .mask-box .mask {
