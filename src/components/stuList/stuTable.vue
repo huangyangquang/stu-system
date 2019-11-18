@@ -22,7 +22,8 @@
 				<td>{{stu.address}}</td>
 				<td>{{stu.phone}}</td>
 				<td>
-					<button class="delStu">
+					<button class="delStu"
+									@click="delStu(stu.sNo)">
 						删除
 					</button>
 					<button class="changeStuInfo"
@@ -50,13 +51,18 @@
 			...mapState(['stuList'])
 		},
 		methods: {
-			...mapActions(['setStuList_findByPage']),
+			...mapActions(['setStuList_findByPage', "delBySno"]),
 			...mapMutations(['setStu']),
 			changeStuInfo(stu, index) {
 				// 通过eventBus来实现兄弟组件间的通信 遮罩层的显示与隐藏
 				this.bus.$emit('click');
 				// 传递payload
 				this.setStu({ stu, index })
+			},
+			delStu(sNo) {
+				this.delBySno(sNo).then(() => {
+					this.setStuList_findByPage();	
+				});
 			}
 		}
 	};

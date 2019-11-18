@@ -271,8 +271,8 @@ html, body, .wrapper {
 /*翻页组件位置*/
 .stu-List-box .turnPage {
 	position: absolute;
-	bottom: 40px;
-	right: 65px;
+	bottom: 60px;
+	right: 20px;
 }
 
 /*表单样式*/
@@ -304,8 +304,8 @@ html, body, .wrapper {
 	border: none;
 }
 
-.wrapper .con-box .content .newStu-form>span input[type="submit"],
-.wrapper .con-box .content .newStu-form>span input[type="reset"]{
+.wrapper .con-box .content .newStu-form>span input[type="button"],
+.wrapper .con-box .content .newStu-form>span input[type="button"]{
 	outline: none;
 	padding: 5px 10px;
 	font-size: 14px;
@@ -313,8 +313,8 @@ html, body, .wrapper {
 	border-radius: 5px;
 }
 
-.wrapper .con-box .content .newStu-form>span input[type="submit"]:hover,
-.wrapper .con-box .content .newStu-form>span input[type="reset"]:hover{
+.wrapper .con-box .content .newStu-form>span input[type="button"]:hover,
+.wrapper .con-box .content .newStu-form>span input[type="button"]:hover{
 	background-color: #000;
 	color: #fff;
 }

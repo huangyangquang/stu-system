@@ -2,7 +2,7 @@ import Axios from 'axios'
 import urls from './URLs.js'
 
 const size = 10;
-const appkey = '13169614911_1553445443290'
+const appkey = 'huanyangquan_1572677518443'
 
 
 const myAjax = Axios.create({
@@ -28,6 +28,29 @@ export default{
 				...data
 			}
 		})
+	},
+	delBySno(sNo) {
+		return myAjax.get(urls.delBySno, {
+			params: {
+				sNo
+			}
+		})
+	},
+	addStudent(data) {
+		return myAjax.get(urls.addStudent, {
+			params: {
+				...data
+			}
+		})
+	},
+	searchStudent(search, page) {
+		return myAjax.get(urls.searchStudent, {
+			params: {
+				sex: -1,
+				size: 10,
+				page,
+				search
+			}
+		})
 	}
-
 }
