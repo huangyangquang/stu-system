@@ -20,6 +20,7 @@
 			navSidebar
 		}
 	};
+
 </script>
 
 <style lang="css">

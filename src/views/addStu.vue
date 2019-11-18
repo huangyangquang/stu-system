@@ -69,9 +69,25 @@
 		methods: {
 			addStu() {
 				Api.addStudent(this.tempStu).then(res => {
-					alert(res.data.msg)
+					if(res.data.status == 'success') {
+						this.$toast({
+							type: 'success',
+							msg: res.data.msg
+						})
+					} else {
+						this.$toast({
+							type: 'err',
+							msg: res.data.msg
+						})
+					}
+					// alert(res.data.msg)
 				}).catch(err => {
-					alert(err);
+					// console.log(this);
+					// alert(err);
+					this.$toast({
+						type: 'err',
+						msg: err
+					})
 				})
 			},
 			resetStu() {
