@@ -59,16 +59,7 @@ html, body, .wrapper {
 	width: 50px;
 	height: 50px;
 	background-repeat: no-repeat;
-
-
-
-	/*为什么不可以解析url里图片？*/
-	/*background-image: url('./assets/logo.png');*/
-
-
-
-
-	
+	background-image: url('./assets/logo.PNG');
 	background-size: 100% 100%;
 }
 
